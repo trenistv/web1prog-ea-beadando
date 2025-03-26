@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web-programozás-1 Előadás Házi feladat</title>
+        <link rel="stylesheet" href="crud_css.css">
+        <script src="./script.js"></script> 
+        <style type="text/css"> 
+
+            body{
+                background-color: #4f4f4f;
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+            header{
+                text-align: center;
+                padding: 10px, 0;
+                text-align: center;
+            }
+            nav ul { 
+              padding: 0;
+              margin: 0;
+              text-align: center;
+              background: #444;
+              list-style: none;
+            } 
+            
+            nav ul li { 
+              display: inline;
+              margin: 0; 
+
+            } 
+            a { 
+              
+              padding: 10px 20px; 
+              margin: 0px 1px; 
+              text-decoration: none; 
+              color: white; 
+              background-color: #3399ee; 
+              display: inline-block;
+            } 
+            li.active a {
+                background: #b17941;
+            }
+            .content {
+                background: white;
+                
+                display: flex;
+                flex-direction: column;
+                
+            }
+            a:hover { 
+              background-color: #cc6600; 
+            } 
+            footer {
+                color: whitesmoke;
+                text-align: center;
+                padding: 10px;
+                background: #333;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+          </style>
+
+        <title>Big for loop</title> 
+        <script> 
+        function loop(){ 
+        for (var i = 0; i <= 100000; i += 1)   
+        var j = i; 
+        alert("Teljesítve " + j + " iteráció" ); 
+        } 
+        function sayHello(){ 
+        alert("Üdvözletem!" ); 
+        } 
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <h1>Web-programozás-1 Előadás Házi feladat</h1>
+        </header>
+       <nav> 
+        <ul>
+            <li><a href="web1beadando.html">CRUD Táblázat</a></li>
+            <li class="active"><a href="3.feladat.html">3. Feladat</a></li>
+            <li><a href="https://www.youtube.com/watch?v=JKffUeq6RaU" target="_blank">Link2</a></li>
+            
+        </ul>
+       </nav>
+       <aside> 
+       
+       </aside>
+       
+
+</body> 
+</html>
+
+       <div class = "content">
+        <p id="webstor">Web Storage</p>
+        <script type="text/javascript"> 
+            if( localStorage.hits ) 
+                localStorage.hits = Number(localStorage.hits) +1; 
+            else 
+                localStorage.hits = 1;
+                document.write("Találatok száma: " + localStorage.hits ); 
+            </script> 
+            <p>Frissítse az oldalt, hogy növelje a számot!.</p> 
+            <p>Zárja be az ablakot, majd nyissa meg újra. Így meglátja az eredményét.</p>
+            
+        <p id="webwork">Web Workers</p>
+        <input type="button" id="loop" onclick="loop();" value="Big Loop"> 
+        <input type="button" id="message" onclick="sayHello();" value="Say Hello"> 
+
+       </div>
+        <footer>
+            <p>Trencsényi István - EY2J1V</p>
+        </footer>
+    </body>
+</html>

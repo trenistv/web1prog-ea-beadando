@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web-programozás-1 Előadás Házi feladat</title>
+        <link rel="stylesheet" href="crud_css.css">
+        <script src="./script.js"></script> 
+        <style type="text/css"> 
+
+            body{
+                background-color: #4f4f4f;
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+            header{
+                text-align: center;
+                padding: 10px, 0;
+                text-align: center;
+            }
+            nav ul { 
+              padding: 0;
+              margin: 0;
+              text-align: center;
+              background: #444;
+              list-style: none;
+            } 
+            
+            nav ul li { 
+              display: inline;
+              margin: 0; 
+
+            } 
+            a { 
+              
+              padding: 10px 20px; 
+              margin: 0px 1px; 
+              text-decoration: none; 
+              color: white; 
+              background-color: #3399ee; 
+              display: inline-block;
+            } 
+            li.active a {
+                background: #b17941;
+            }
+            .content {
+                background: white;
+                
+                display: flex;
+                flex-direction: column;
+                
+            }
+            a:hover { 
+              background-color: #cc6600; 
+            } 
+            footer {
+                color: whitesmoke;
+                text-align: center;
+                padding: 10px;
+                background: #333;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+          </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>Web-programozás-1 Előadás Házi feladat</h1>
+        </header>
+       <nav> 
+        <ul>
+            <li class="active"><a href="web1beadando.html">CRUD Táblázat</a></li>
+            <li><a href="3.feladat.html">3. Feladat</a></li>
+            <li><a href="https://www.youtube.com/watch?v=JKffUeq6RaU" target="_blank">Link2</a></li>
+            
+        </ul>
+       </nav>
+       <aside> 
+       
+       </aside>
+       
+        <hr> 
+        <div class="employee-form"> 
+
+        <form onsubmit="event.preventDefault();onFormSubmit();"> 
+            <div class="form-group"> 
+                
+                <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">A mező kötelező!</label> 
+                <input type="text" name="fullName" id="fullName"> 
+            
+           
+                <label>Email Id</label><label class="validation-error hide" id="emailValidationError">Az email címnek .com vagy .hu végződésűnek kell lennie!</label>
+                <input type="text" name="email" id="email"> 
+            
+            
+                <label>Salary</label><label class="validation-error hide" id="salaryValidationError">A mező csak számot tartalmazhat!</label>
+                <input type="text" name="salary" id="salary"> 
+           
+          
+                <label>City</label><label class="validation-error hide" id="cityValidationError">A város csak karaktereket tartalmazhat!</label>
+                <input type="text" name="city" id="city"> 
+            </div> 
+            <div  class="form-action-buttons"> 
+                <input type="submit" value="Elküldés"> 
+            </div> 
+        </form> 
+    </div> 
+    <br/>
+
+    <div class = "employees-table"> 
+        
+        <input type="text" id="Kereső" onkeyup="myFunction()" placeholder="Név kereső" title="Írja be a keresendő nevet">
+        <table class="list" id="table"> 
+        
+            <thead> 
+                <tr> 
+                    <th><button onclick="sortTable(0)">Név</button></th> 
+                    <th><button onclick="sortTable(1)">Email cím</button></th> 
+                    <th><button onclick="sortTable(2)">Fizetés</button></th> 
+                    <th><button onclick="sortTable(3)">Város</button></th> 
+                    <th>Művelet</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+            </tbody> 
+        </table> 
+</div> 
+
+</body> 
+</html>
+
+       <div class = "content">
+            
+            
+       </div>
+        <footer>
+            <p>Trencsényi István - EY2J1V</p>
+        </footer>
+    </body>
+</html>
