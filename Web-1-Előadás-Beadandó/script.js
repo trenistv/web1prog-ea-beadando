@@ -248,3 +248,27 @@ function validate() {
     return isValid; 
 } 
 
+function allowDrop(ev) { 
+    ev.preventDefault(); 
+    } 
+    function drag(ev) { 
+        ev.dataTransfer.setData("text", ev.target.id); 
+    } 
+        function drop(ev) { 
+        ev.preventDefault(); 
+        var data = ev.dataTransfer.getData("text"); 
+        ev.target.appendChild(document.getElementById(data)); 
+    }
+
+
+function Canvas(){ 
+    var canvas = document.getElementById('canvas'); 
+    if (canvas.getContext){
+        var ctx = canvas.getContext('2d'); 
+        ctx.fillRect(25,25,100,100); 
+        ctx.clearRect(45,45,60,60); 
+        ctx.strokeRect(50,50,50,50); 
+    } 
+    else  
+        alert('A Canvas nem támogatott.'); 
+} 

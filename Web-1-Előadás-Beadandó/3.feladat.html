@@ -6,6 +6,9 @@
         <title>Web-programozás-1 Előadás Házi feladat</title>
         <link rel="stylesheet" href="crud_css.css">
         <script src="./script.js"></script> 
+        
+            
+             
         <style type="text/css"> 
 
             body{
@@ -86,17 +89,18 @@
         <ul>
             <li><a href="web1beadando.html">CRUD Táblázat</a></li>
             <li class="active"><a href="3.feladat.html">3. Feladat</a></li>
-            <li><a href="https://www.youtube.com/watch?v=JKffUeq6RaU" target="_blank">Link2</a></li>
-            
+            <li><a href="canvas.html" >Canvas</a></li>
+            <li><a href="chartjs.html">Chart JS</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
         </ul>
        </nav>
        <aside> 
        
        </aside>
-       
+      
 
 </body> 
-</html>
+
 
        <div class = "content">
         <p id="webstor">Web Storage</p>
@@ -113,10 +117,37 @@
         <p id="webwork">Web Workers</p>
         <input type="button" id="loop" onclick="loop();" value="Big Loop"> 
         <input type="button" id="message" onclick="sayHello();" value="Say Hello"> 
+        
+        <p id="drag">Drag And Drop API</p>
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div> 
+            <br>
+        <img id="drag1" src="Képek/bpest.png" draggable="true" ondragstart="drag(event)" width="400" height="300">
 
+        <body onload="myFunction()"> 
+            <p id="geo">Geolocation</p>
+                <button onclick="getLocation()" id="locate">Próba</button> 
+            <p id="demo"></p> 
+            <script>  
+                var x = document.getElementById("demo"); 
+                function getLocation()  { 
+                if (navigator.geolocation) 
+                    navigator.geolocation.getCurrentPosition(showPosition); 
+                else  
+                    x.innerHTML = "A lokáció nem támogatott ezen a böngészőn."; 
+                } 
+                function showPosition(position)  { 
+                    x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;  
+                    var newContent = '<iframe src = "https://maps.google.com/maps?q=' +  position.coords.latitude + ',' + position.coords.longitude + '&hl=es;z=14&amp;output=embed" width="600" height="450"></iframe>'; 
+                    var contentHolder = document.getElementById('content-holder'); 
+                    contentHolder.innerHTML = newContent; 
+                } 
+            </script> 
+            <p id="content-holder">Google maps: Waiting for GPS coordinates ...</p> 
+            </body> 
        </div>
+       
         <footer>
             <p>Trencsényi István - EY2J1V</p>
         </footer>
-    </body>
+    
 </html>

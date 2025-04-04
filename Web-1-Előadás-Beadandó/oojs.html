@@ -64,7 +64,7 @@
                 width: 100%;
             }
           </style>
-
+            
     </head>
     <body>
         <header>
@@ -72,11 +72,11 @@
         </header>
        <nav> 
         <ul>
-            <li class="active"><a href="web1beadando.html">CRUD Táblázat</a></li>
+            <li class><a href="web1beadando.html">CRUD Táblázat</a></li>
             <li><a href="3.feladat.html">3. Feladat</a></li>
             <li><a href="canvas.html">Canvas</a></li>
             <li><a href="chartjs.html">Chart JS</a></li>
-            <li><a href="oojs.html">OOJS</a></li>
+            <li class="active"><a href="oojs.html">OOJS</a></li>
         </ul>
        </nav>
        <aside> 
@@ -84,57 +84,11 @@
        </aside>
        
         <hr> 
-        <div class="employee-form"> 
+   
 
-        <form onsubmit="event.preventDefault();onFormSubmit();"> 
-            <div class="form-group"> 
-                
-                <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">A mező kötelező!</label> 
-                <input type="text" name="fullName" id="fullName"> 
-            
-           
-                <label>Email Id</label><label class="validation-error hide" id="emailValidationError">Az email címnek .com vagy .hu végződésűnek kell lennie!</label>
-                <input type="text" name="email" id="email"> 
-            
-            
-                <label>Salary</label><label class="validation-error hide" id="salaryValidationError">A mező csak számot tartalmazhat!</label>
-                <input type="text" name="salary" id="salary"> 
-           
-          
-                <label>City</label><label class="validation-error hide" id="cityValidationError">A város csak karaktereket tartalmazhat!</label>
-                <input type="text" name="city" id="city"> 
-            </div> 
-            <div  class="form-action-buttons"> 
-                <input type="submit" value="Elküldés"> 
-            </div> 
-        </form> 
-    </div> 
-    <br/>
-
-    <div class = "employees-table"> 
-        
-        <input type="text" id="Kereső" onkeyup="myFunction()" placeholder="Név kereső" title="Írja be a keresendő nevet">
-        <table class="list" id="table"> 
-        
-            <thead> 
-                <tr> 
-                    <th><button onclick="sortTable(0)">Név</button></th> 
-                    <th><button onclick="sortTable(1)">Email cím</button></th> 
-                    <th><button onclick="sortTable(2)">Fizetés</button></th> 
-                    <th><button onclick="sortTable(3)">Város</button></th> 
-                    <th>Művelet</th> 
-                </tr> 
-            </thead> 
-            <tbody> 
-            </tbody> 
-        </table> 
-</div> 
-
-</body> 
-</html>
-
+    
        <div class = "content">
-            
+        <script defer src="oojs.js"></script>
             
        </div>
         <footer>

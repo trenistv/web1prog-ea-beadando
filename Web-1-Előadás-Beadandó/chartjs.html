@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web-programozás-1 Előadás Házi feladat</title>
+        <link rel="stylesheet" href="crud_css.css">
+        <script src="./script.js"></script> 
+        <style type="text/css"> 
+
+            body{
+                background-color: #4f4f4f;
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+            header{
+                text-align: center;
+                padding: 10px, 0;
+                text-align: center;
+            }
+            nav ul { 
+              padding: 0;
+              margin: 0;
+              text-align: center;
+              background: #444;
+              list-style: none;
+            } 
+            
+            nav ul li { 
+              display: inline;
+              margin: 0; 
+
+            } 
+            a { 
+              
+              padding: 10px 20px; 
+              margin: 0px 1px; 
+              text-decoration: none; 
+              color: white; 
+              background-color: #3399ee; 
+              display: inline-block;
+            } 
+            li.active a {
+                background: #b17941;
+            }
+            .content {
+                background: white;
+                
+                display: flex;
+                flex-direction: column;
+                
+            }
+            a:hover { 
+              background-color: #cc6600; 
+            } 
+            footer {
+                color: whitesmoke;
+                text-align: center;
+                padding: 10px;
+                background: #333;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+            
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            text-align: center;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+        }
+        td:hover {
+            background-color: lightgray;
+        }
+        canvas {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    
+          </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Web-programozás-1 Előadás Házi feladat</h1>
+        </header>
+       <nav> 
+        <ul>
+            <li><a href="web1beadando.html">CRUD Táblázat</a></li>
+            <li><a href="3.feladat.html">3. Feladat</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li class="active"><a href="chartjs.html">Chart JS</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+        </ul>
+       </nav>
+       <aside> 
+       
+       </aside>
+        
+
+
+       <div class = "content">
+            <h1>Chart JS</h1>
+
+            <h2 style="text-align:center;">Válassz egy sort a táblázatból</h2>
+            <table id="dataTable">
+                <tbody>
+                    <!-- A táblázat automatikusan generálódik JS-ben -->
+                </tbody>
+            </table>
+        
+            <canvas id="myChart"></canvas>
+        
+            <script>
+                // 5x5-ös számokkal feltöltött mátrix
+                const dataMatrix = [
+                    [10, 20, 0, 40, 50],
+                    [15, 5, 35, 56, 55],
+                    [5,  15, 25, 75, 1],
+                    [12, 22, 2, 42, 52],
+                    [8,  18, 28, 8, 48]
+                ];
+        
+                // Táblázat generálása
+                const table = document.getElementById("dataTable");
+                dataMatrix.forEach((row, rowIndex) => {
+                    let tr = document.createElement("tr");
+                    row.forEach(cell => {
+                        let td = document.createElement("td");
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    tr.addEventListener("click", () => drawChart(row, rowIndex));
+                    table.appendChild(tr);
+                });
+        
+                // Chart.js vonaldiagram inicializálása
+                const ctx = document.getElementById("myChart").getContext("2d");
+                const chart = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: ["1. oszlop", "2. oszlop", "3. oszlop", "4. oszlop", "5. oszlop"],
+                        datasets: [{
+                            label: "Kiválasztott sor",
+                            data: [],
+                            borderColor: "blue",
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true }
+                        }
+                    }
+                });
+        
+                // Diagram frissítése a kiválasztott sor alapján
+                function drawChart(rowData, rowIndex) {
+                    chart.data.datasets[0].data = rowData;
+                    chart.data.datasets[0].label = `Kiválasztott sor: ${rowIndex + 1}`;
+                    chart.update();
+                }
+            </script>
+            
+       </div>
+        <footer>
+            <p>Trencsényi István - EY2J1V</p>
+        </footer>
+    </body>
+</html>

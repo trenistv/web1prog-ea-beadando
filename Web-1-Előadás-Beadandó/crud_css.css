@@ -122,9 +122,39 @@ button:hover{
     font-size: 1.1em;
     font-weight: bold;
 }
+#geo{
+    color: #0000ee;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#drag{
+    color: #0000ee;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#canv{
+    color: #0000ee;
+    font-size: 1.1em;
+    font-weight: bold;
+}
 #loop{
     width: 500px;
 }
 #message{
     width: 500px;
+}
+#locate{
+    width: 500px;
+}
+#div1 {
+    width:400px;
+    height:300px;
+    padding:10px;
+    border:1px solid #aaaaaa;
+
+} 
+#can{
+    width: auto; 
+    height:auto; 
+    margin: 0px auto;
 }
